@@ -254,7 +254,6 @@ if __name__ == '__main__':
             output_doc.write(doc + "\n")
     # 输出所有主题的embedding
     topic_vec_url = os.path.join(output_dir, 'topic_vec.txt')
-    print("model.topic_vec", type(model.topic_vec.data), model.topic_vec.size())
     topic_vec = model.topic_vec.data.cpu().detach().numpy()
     with open(topic_vec_url, "a", encoding="utf-8") as output_topic_embedding:
         for topic_v in topic_vec:
